@@ -102,33 +102,35 @@ const products = [
 
 const ProductGrid = () => {
   return (
-    <div className="max-w-6xl mx-auto px-2 ">
-       
-      <motion.h2
-        className="text-3xl font-bold mb-4 md:text-4xl  text-center"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        Nos articles
-      </motion.h2>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 ">
-        {products.map((product, index) => (
-          <motion.div
-            key={product.name}
-            className="w-[160px] md:w-[180px] lg:w-[200px]"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <ProductCard product={product} />
-          </motion.div>
-        ))}
-      </div>
+    <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col items-center">
+    {/* Titre avec animation */}
+    <motion.h2
+      className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center"
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      Nos articles
+    </motion.h2>
+  
+    {/* Grille des produits centrée */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 w-full place-items-center">
+      {products.map((product, index) => (
+        <motion.div
+          key={product.name}
+          className="w-full max-w-[250px]"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+        >
+          <ProductCard product={product} />
+        </motion.div>
+      ))}
     </div>
+  </div>
+  
   );
 };
 
