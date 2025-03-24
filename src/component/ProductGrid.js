@@ -102,9 +102,10 @@ const products = [
 
 const ProductGrid = () => {
   return (
-    <div className="max-w-6xl mx-auto px-2">
+    <div className="max-w-6xl mx-auto px-2 ">
+       
       <motion.h2
-        className="text-2xl font-bold mb-4 text-center"
+        className="text-3xl font-bold mb-4 md:text-4xl  text-center"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

@@ -48,40 +48,50 @@ export default function Layout({ children }) {
     <div>
       <Header />
       <main>{children}</main>
-      <section className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/planche.png')" }} // Change ici le chemin de l'image de fond
-    >
-      <div className="absolute inset-0 bg-black/20"></div> {/* Filtre sombre */}
-      
-      <div className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 md:px-12 py-6 gap-6 md:gap-12">
-  {/* Image de la femme */}
-  <div className="w-full md:w-1/2 flex ">
-    <Image
-      src="/Accueil.png" 
-      alt="Femme Gabonaise"
-      width={400}
-      height={500}
-      className="object-cover drop-shadow-xl"
-    />
+      <section 
+  className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
+  style={{ backgroundImage: "url('/planche.png')" }} // Image de fond principale
+>
+  {/* Filtre sombre pour améliorer la lisibilité */}
+  <div className="absolute inset-0 bg-black/40 md:bg-black/20"></div> 
+
+  {/* Image de la femme en fond uniquement sur mobile */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center md:hidden" 
+    style={{ backgroundImage: "url('/logos.png')" }} 
+  >
+    <div className="absolute inset-0 bg-black/50"></div> {/* Filtre sombre pour la lisibilité */}
   </div>
 
-  {/* Texte et CTA */}
-  <div className="w-full md:w-1/2 text-white text-right">
-    <h1 className="text-6xl md:text-6xl font-bold">
-      Bienvenue sur <span className="text-yellow-400">ARTIZ</span>
-    </h1>
-    <p className="mt-4 text-xl md:text-2xl">
-      L’artisanat, une histoire dans chaque pièce. Des créations qui parlent du Gabon.
-    </p>
-    <button className="mt-6 bg-black text-white px-8 py-4 rounded-lg text-xl hover:bg-gray-800 transition">
-      Inscrivez-vous maintenant
-    </button>
+  {/* Contenu principal */}
+  <div className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 md:px-12 py-6 gap-6 md:gap-12">
+    
+    {/* Image en grand écran */}
+    <div className="hidden md:flex w-full md:w-1/2">
+      <Image
+        src="/logos.png" 
+        alt="Femme Gabonaise"
+        width={400}
+        height={400}
+        className="object-cover drop-shadow-xl"
+      />
+    </div>
+
+    {/* Texte et CTA */}
+    <div className="w-full md:w-1/2 text-white text-center md:text-right relative z-10">
+      <h1 className="text-4xl md:text-7xl font-bold">
+        Bienvenue sur <span className="text-black bg-white px-2">ARTIZ</span>
+      </h1>
+      <p className="mt-4 text-lg md:text-2xl">
+        L’artisanat, une histoire dans chaque pièce. Des créations qui parlent du Gabon.
+      </p>
+      <button className="mt-6 bg-black text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-lg md:text-xl hover:bg-gray-800 transition">
+        Inscrivez-vous maintenant
+      </button>
+    </div>
   </div>
-</div>
+</section>
 
-
-
-    </section>
     <div className="flex flex-col items-center justify-center h-64 text-white">
      
       <Carousel />
@@ -123,14 +133,14 @@ export default function Layout({ children }) {
       </div>
     </section>
 
-    <div className="p-6">
-  <h2 className="text-2xl font-bold mb-6 text-center">Meilleures Ventes</h2>
+    <div className="p-3 bg-stone-600">
+  {/* <h2 className="text-2xl font-bold  text-center">Meilleures Ventes</h2> */}
 
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
+  <div className=" gap-6 place-items-center">
     <BestSellerCard product={bestSellers[0]} />
-    <BestSellerCard product={bestSellers[1]} />
-    <BestSellerCard product={bestSellers[2]} />
+    {/* <BestSellerCard product={bestSellers[1]} />
+    <BestSellerCard product={bestSellers[2]} /> */}
   </div>
 </div>
 
