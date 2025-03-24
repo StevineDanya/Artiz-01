@@ -1,103 +1,171 @@
-import Image from "next/image";
+"use client"; 
+import Header from './../component/Header';
+import Carousel from "./../component/Carousel";
+import BestSellerCard from "./../component/BestSellerCard";
+import { motion } from "framer-motion";
+import Image from 'next/image';
+import ProductGrid from "./../component/ProductGrid";
+import ServiceSection from "./../component/ServiceSection";
+import MissionSection from "./../component/MissionSection";
+import Testimonials from "./../component/Testimonials";
+import ContactForm from "./../component/ContactForm";
+import Footer from "./../component/Footer";
 
-export default function Home() {
+
+
+const bestSellers = [
+  {
+    id: 1,
+    name: "Masque Gabonais",
+    image: "/sav.png",
+    oldPrice: 999,
+    price: 899,
+    discount: 10,
+    reviews: 97,
+  },
+  {
+    id: 2,
+    name: "Statue en bois",
+    image: "/sav.png",
+    oldPrice: 1200,
+    price: 950,
+    discount: 20,
+    reviews: 54,
+  },
+  {
+    id: 3,
+    name: "Tissu traditionnel",
+    image: "/sav.png",
+    oldPrice: 300,
+    price: 250,
+    discount: 15,
+    reviews: 32,
+  },
+];
+
+export default function Layout({ children }) {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <Header />
+      <main>{children}</main>
+      <section className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/planche.png')" }} // Change ici le chemin de l'image de fond
+    >
+      <div className="absolute inset-0 bg-black/20"></div> {/* Filtre sombre */}
+      
+      <div className="relative flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 md:px-12 py-6 gap-6 md:gap-12">
+  {/* Image de la femme */}
+  <div className="w-full md:w-1/2 flex ">
+    <Image
+      src="/Accueil.png" 
+      alt="Femme Gabonaise"
+      width={400}
+      height={500}
+      className="object-cover drop-shadow-xl"
+    />
+  </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  {/* Texte et CTA */}
+  <div className="w-full md:w-1/2 text-white text-right">
+    <h1 className="text-6xl md:text-6xl font-bold">
+      Bienvenue sur <span className="text-yellow-400">ARTIZ</span>
+    </h1>
+    <p className="mt-4 text-xl md:text-2xl">
+      L’artisanat, une histoire dans chaque pièce. Des créations qui parlent du Gabon.
+    </p>
+    <button className="mt-6 bg-black text-white px-8 py-4 rounded-lg text-xl hover:bg-gray-800 transition">
+      Inscrivez-vous maintenant
+    </button>
+  </div>
+</div>
+
+
+
+    </section>
+    <div className="flex flex-col items-center justify-center h-64 text-white">
+     
+      <Carousel />
+    </div>
+
+    <section className="bg-black text-white py-12 px-6 md:px-16">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        
+     
+        <div className="md:w-1/2">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">À Propos d'Artiz</h2>
+          <p className="text-lg leading-relaxed">
+            Artiz, bien plus qu’une plateforme : une passion pour l’artisanat gabonais.
+            <br />
+            Chez Artiz, nous croyons en la richesse et la beauté de l’artisanat gabonais. 
+            Notre plateforme a été créée avec une mission simple mais puissante : 
+            <strong> valoriser et promouvoir</strong> le savoir-faire des artisans locaux, tout en vous offrant 
+            des créations uniques et authentiques.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Image stylisée avec effet de cadre */}
+        <div className="md:w-1/2 relative flex justify-center">
+          <div className="relative">
+            {/* Bordure blanche en arrière-plan */}
+            <div className="absolute -top-6 -left-5 w-full h-full border-4 border-white rounded-lg"></div>
+
+            {/* Image principale avec effet de profondeur */}
+            <Image
+              src="/groupe.jpg" // Assure-toi que le chemin est correct
+              alt="Photo de Artiz"
+              width={500}
+              height={400}
+              className="rounded-lg object-cover relative z-10 shadow-lg"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div className="p-6">
+  <h2 className="text-2xl font-bold mb-6 text-center">Meilleures Ventes</h2>
+
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
+    <BestSellerCard product={bestSellers[0]} />
+    <BestSellerCard product={bestSellers[1]} />
+    <BestSellerCard product={bestSellers[2]} />
+  </div>
+</div>
+
+
+<main className="min-h-screen bg-gray-100 py-10">
+      <div className="container mx-auto px-4">
+        <ProductGrid />
+      </div>
+    </main>
+
+    <div>
+      
+      <ServiceSection />
+    </div>
+
+    <div>
+      <MissionSection />
+    </div>
+
+    
+    <div>
+    <Testimonials />
+    </div>  
+
+    <div className="w-full flex flex-col items-center justify-center gap-5">
+  <ContactForm />
+</div>
+
+<div>
+<Footer />
+    </div>
+
+    
+
+  
     </div>
   );
 }
