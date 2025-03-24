@@ -6,19 +6,19 @@ const testimonials = [
   {
     id: 1,
     name: 'Emily KOUMBA',
-    review: "Je suis absolument ravie de mon expérience d'achat sur O'lo Store. La qualité des produits est excellente et la livraison a été rapide et efficace.",
+    review: "Je suis absolument ravie de mon expérience d'achat sur ARTZ",
     image: '/images/emily.jpg', // Remplace avec la vraie image
   },
   {
     id: 2,
     name: 'Chef ONANGA',
-    review: "O'lo Store est devenu mon magasin de référence pour l'électronique. J'ai commandé un nouvel ordinateur portable et il est arrivé en parfait état.",
+    review: "ARTIZ est devenu mon magasin de référence pour l'artisanat. J'ai commandé un nouvel article en liane et il est arrivé en parfait état.",
     image: '/images/onanga.jpg',
   },
   {
     id: 3,
     name: 'Dan MOULELE',
-    review: "Je cherchais un magasin fiable pour acheter un appareil photo et des accessoires, et je suis tombée sur O'lo Store. Je recommande sans hésiter !",
+    review: "Je cherchais un magasin fiable pour acheter des accessoires, et je suis tombée sur ARTIZ. Je le recommande sans hésiter !",
     image: '/images/dan.jpg',
   },
 ];

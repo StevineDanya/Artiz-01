@@ -6,12 +6,12 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const categories = [
-  { src: "/cat.jpg", alt: "Peinture" },
-  { src: "/cat.jpg", alt: "Sculpture" },
-  { src: "/cat.jpg", alt: "Céramique" },
-  { src: "/cat.jpg", alt: "Tissage" },
-  { src: "/cat.jpg", alt: "Bijoux" },
-  { src: "/cat.jpg", alt: "Papeterie" },
+  { src: "/d1.png", alt: "Décoration" },
+  { src: "/sc1.png", alt: "Sculpture" },
+  { src: "/g1.png", alt: "Cosmétique" },
+  { src: "/inf1.png", alt: "Bien-etre" },
+  { src: "/p1.png", alt: "Alimentation" },
+  { src: "/boisson1.png", alt: "Boisson" },
   { src: "/cat.jpg", alt: "Bois" },
   { src: "/cat.jpg", alt: "Textile" },
   { src: "/cat.jpg", alt: "Décoration" },

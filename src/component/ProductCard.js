@@ -35,12 +35,12 @@ const ProductCard = ({ product }) => {
 
         {/* Prix et réduction */}
         <div className="mt-1 flex items-center justify-center gap-2 text-sm">
-          <span className="text-gray-400 line-through">${product.oldPrice}</span>
+          <span className="text-gray-400 line-through">{product.oldPrice}Fcfa</span>
           <span className="bg-blue-100 text-blue-600 px-2 rounded text-xs">
             -{product.discount}%
           </span>
         </div>
-        <p className="text-lg font-bold mt-1">${product.price}</p>
+        <p className="text-lg font-bold mt-1">{product.price}Fcfa</p>
       </div>
 
       {/* Actions */}
