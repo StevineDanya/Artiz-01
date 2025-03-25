@@ -53,7 +53,7 @@ const Footer = () => {
   
         {/* Bas de page */}
         <div className="text-center text-gray-500 text-sm mt-8">
-          <p>© 2025 Artiz - Tous droits réservés</p>
+          <p>© 2025 Artiz - Alec & Stevine Libreville Ganon</p>
           <p className="mt-2">
             <a href="#" className="hover:underline">Politique de confidentialité</a> |
             <a href="#" className="hover:underline"> Conditions d'utilisation</a> |
