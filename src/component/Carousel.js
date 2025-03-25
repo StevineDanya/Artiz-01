@@ -12,8 +12,8 @@ const categories = [
   { src: "/inf1.png", alt: "Bien-etre" },
   { src: "/p1.png", alt: "Alimentation" },
   { src: "/boisson1.png", alt: "Boisson" },
-  { src: "/cat.jpg", alt: "Bois" },
-  { src: "/cat.jpg", alt: "Textile" },
+  { src: "/cat.jpg", alt: "Livre" },
+  { src: "/cat.jpg", alt: "Masque" },
   { src: "/cat.jpg", alt: "Décoration" },
   { src: "/cat.jpg", alt: "Accessoires" },
 ];
