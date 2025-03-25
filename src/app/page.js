@@ -137,7 +137,7 @@ export default function Layout({ children }) {
   {/* <h2 className="text-2xl font-bold  text-center">Meilleures Ventes</h2> */}
 
 
-  <div className=" gap-6 place-items-center">
+  <div className=" gap-6 place-items-center flex justify-center">
     <BestSellerCard product={bestSellers[0]} />
     {/* <BestSellerCard product={bestSellers[1]} />
     <BestSellerCard product={bestSellers[2]} /> */}

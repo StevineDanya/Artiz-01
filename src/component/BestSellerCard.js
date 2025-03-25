@@ -6,33 +6,33 @@ import { AiOutlineHeart } from "react-icons/ai";
 const products = [
   {
     id: 1,
-    name: "Masque en bois",
-    images: ["/sc1.png", "/s5.png", "/images/shoes3.jpg"],
-    price: 49.99,
-    oldPrice: 59.99,
+    name: "Couple floral DOUTSONA",
+    images: ["/sc1.png", "/sc1.png", "/sc1.png"],
+    price: 1750.000,
+    oldPrice: 200.000,
     discount: 20,
     reviews: 120,
-    whatsappLink: "https://wa.me/1234567890",
+    whatsappLink: "https://wa.me/+24162635316",
   },
   {
     id: 2,
-    name: "Montre de luxe",
-    images: ["/images/watch1.jpg", "/images/watch2.jpg", "/images/watch3.jpg"],
-    price: 149.99,
-    oldPrice: 199.99,
-    discount: 25,
+    name: "Gamme de produits",
+    images: ["/g1.png", "/g2.png", "/gin1.png"],
+    price: 18.500,
+    oldPrice: 20.000,
+    discount: 1500,
     reviews: 85,
-    whatsappLink: "https://wa.me/9876543210",
+    whatsappLink: "https://wa.me/+24162635316",
   },
   {
     id: 3,
-    name: "Sac à dos en cuir",
-    images: ["/images/bag1.jpg", "/images/bag2.jpg", "/images/bag3.jpg"],
-    price: 89.99,
+    name: "Infusion",
+    images: ["/inf1.png", "/inf2.png", "/inf3.png"],
+    price: 10.000,
     oldPrice: 109.99,
     discount: 18,
     reviews: 60,
-    whatsappLink: "https://wa.me/1122334455",
+    whatsappLink: "https://wa.me/+24162635316",
   },
 ];
 
@@ -41,9 +41,9 @@ const ProductCard = ({ product, isFeatured }) => {
 
   return (
     <div
-      className={`bg-white shadow-lg rounded-xl p-4 flex flex-col items-center ${
+      className={`bg-white shadow-lg rounded-xl p-4 flex flex-col items-center mt-20 {
         isFeatured ? "w-full max-w-md" : "w-full max-w-xs"
-      }`}
+      FCFA}`}
     >
       {/* Image principale */}
       <div className="relative w-40 h-40">
@@ -122,27 +122,23 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen w-full bg-gray-100 py-10 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4  ">Meilleures Ventes</h2>
-    {/* Section Produits (Incluant Meilleure Vente) */}
-    <section className="w-full max-w-6xl ">
-      
-      
-      <div className="flex justify-center gap-8 flex-wrap">
-        {/* Meilleure Vente - Toujours en première position */}
-        <div className="w-80 h-auto">
-          <ProductCard product={bestSellingProduct} isFeatured />
-        </div>
-
-        {/* Autres Produits */}
-        {otherProducts.map((product) => (
-          <div key={product.id} className="w-80 h-auto">
-            <ProductCard product={product} />
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">Meilleures Ventes</h2>
+      {/* Section Produits (Incluant Meilleure Vente) */}
+      <section className="w-full max-w-6xl">
+        <div className="flex justify-center gap-8 flex-wrap">
+          {/* Meilleure Vente - Toujours en première position */}
+          <div className="w-80 h-auto">
+            <ProductCard product={bestSellingProduct} isFeatured />
           </div>
-        ))}
-      </div>
-    </section>
-</div>
 
-  
+          {/* Autres Produits */}
+          {otherProducts.map((product) => (
+            <div key={product.id} className="w-80 h-auto">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

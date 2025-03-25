@@ -5,12 +5,12 @@ const MissionSection = () => {
     {
       title: "Valoriser l’Artisanat Gabonais",
       description:
-        "Aku cocok menggunakan produk night cream white secret dari wardah ini. Buat kulit wajahku terasa lem",
+        "👉 Offrir une vitrine numérique aux artisans pour exposer et vendre leurs créations à un public plus large, local et international"
     },
     {
-      title: "Soutenir les Artisans Locaux",
+      title: "Faciliter l’accès au marché pour les artisans",
       description:
-        "Aku cocok menggunakan produk night cream white secret dari wardah ini. Buat kulit wajahku terasa lem",
+        "👉 Simplifier le processus de vente en mettant à disposition une plateforme intuitive et un système de paiement sécurisé.",
     },
     {
       title: "Promouvoir une Consommation Responsable",
@@ -18,9 +18,9 @@ const MissionSection = () => {
         "Aku cocok menggunakan produk night cream white secret dari wardah ini. Buat kulit wajahku terasa lem",
     },
     {
-      title: "Faciliter l’Accès à l’Artisanat",
+      title: "Encourager la consommation locale et responsable",
       description:
-        "Aku cocok menggunakan produk night cream white secret dari wardah ini. Buat kulit wajahku terasa lem",
+        "👉 Sensibiliser le public à l’importance d’acheter des produits faits main, issus du savoir-faire local, afin de dynamiser l’économie artisanale du Gabon.",
     },
   ];
 
