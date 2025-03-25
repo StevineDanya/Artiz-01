@@ -14,14 +14,19 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "ARTIZ",
   description: "Site artisanal gabonais",
+  icons: {
+    icon: "/logo.png", // Spécifie le logo comme icône
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        {/* Lien vers ton favicon */}
+        <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
