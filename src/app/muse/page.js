@@ -11,7 +11,6 @@ import ResourcesSection from "../../component/ResourcesSection";
 import HighlightSection from "../../component/HighlightSection";
 import ArticlesSection from "../../component/ArticlesSection";
 import EventsSection from "../../component/EventsSection";
-import NewsletterSection from "../../component/NewsletterSection";
 import Footer from "../../component/Footer";
 
 export default function Home() {
@@ -22,29 +21,45 @@ export default function Home() {
       title: "Histoire du Masque Punu",
       date: "JANVIER 15, 2024",
       description:
-        "AfricLe masque Mukudji est un masque traditionnel gabonais, originaire du groupe ethnique Punu dans les régions de la Ngounié et de la Nyanga (Gabon).",
+        "Le masque Mukudji est un masque traditionnel gabonais, originaire du groupe ethnique Punu dans les régions de la Ngounié et de la Nyanga (Gabon).",
       image: "/punu.jpg",
     },
     {
       title: "Masque Massango",
-      date: "JULLET 31, 2023",
+      date: "JUILLET 31, 2023",
       description:
-        "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral (entre Libreville et la lagune Fernan Vaz) et le long de l'Ogooué jusqu'à Lambaréné .",
+        "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral et le long de l'Ogooué jusqu'à Lambaréné .",
       image: "/mas.jpg",
     },
     {
       title: "Masque Myene",
       date: "MARS 31, 2023",
-      description: "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral (entre Libreville et la lagune Fernan Vaz) et le long de l'Ogooué jusqu'à Lambaréné .",
+      description:
+        "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral et le long de l'Ogooué jusqu'à Lambaréné .",
       image: "/mas2.jpg",
     },
     {
-      title: "Masque Massango",
-      date: "JULLET 31, 2023",
+      title: "Histoire du Masque Punu",
+      date: "JANVIER 15, 2024",
       description:
-        "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral (entre Libreville et la lagune Fernan Vaz) et le long de l'Ogooué jusqu'à Lambaréné .",
+        "Le masque Mukudji est un masque traditionnel gabonais, originaire du groupe ethnique Punu dans les régions de la Ngounié et de la Nyanga (Gabon).",
+      image: "/punu.jpg",
+    },
+    {
+      title: "Masque Massango",
+      date: "JUILLET 31, 2023",
+      description:
+        "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral et le long de l'Ogooué jusqu'à Lambaréné .",
       image: "/mas.jpg",
     },
+    {
+      title: "Masque Myene",
+      date: "MARS 31, 2023",
+      description:
+        "Les Myènè sont une population bantoue d'Afrique centrale établie au Gabon, sur le littoral et le long de l'Ogooué jusqu'à Lambaréné .",
+      image: "/mas2.jpg",
+    }
+    
   ];
 
   return (
@@ -72,68 +87,20 @@ export default function Home() {
         />
       </div>
 
-      {/* Section vidéo */}
-      <section className="bg-white py-10">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center p-6">
-    {/* Vidéo */}
-    <div className="w-full md:w-1/2">
-      <div
-        className="relative w-full max-w-md mx-auto cursor-pointer"
-        onClick={() => setIsPlaying(true)}
-      >
-        {!isPlaying ? (
-          <div className="relative">
-            <Image
-              src="/video-thumbnail.jpg"
-              alt="Femme Gabonaise"
-              width={500}
-              height={500}
-              className="w-full h-auto object-cover drop-shadow-lg rounded-lg"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-              <button className="bg-white text-black px-5 py-2 text-lg font-bold rounded-full">
-                ▶ Play
-              </button>
-            </div>
-          </div>
-        ) : (
-          <video
-            src="/video.mp4"
-            controls
-            autoPlay
-            className="w-full h-auto rounded-lg drop-shadow-lg"
-          />
-        )}
-      </div>
-    </div>
-
-    {/* Texte */}
-    <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-12">
-      <h2 className="text-4xl md:text-3xl font-bold leading-snug text-gray-900">
-        Nous fusionnons la <span className="text-yellow-500">culture</span> et la{" "}
-        <span className="text-yellow-500">technologie</span> pour préserver
-        l’histoire avec des outils numériques innovants.
-      </h2>
-      <p className="mt-3 text-md text-gray-700">
-        Découvrez comment nous utilisons la technologie pour protéger et mettre en valeur le patrimoine culturel africain.
-      </p>
-      <button className="mt-5 bg-black hover:bg-white hover:text-black text-white px-5 py-2 rounded-lg text-md font-semibold transition duration-300">
-        En savoir plus
-      </button>
-    </div>
-  </div>
-</section>
-
-
-      {/* Section Projets */}
+      {/* Section Projets avec animation */}
       <section className="py-12 bg-gray-200">
         <div className="max-w-6xl mx-auto p-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Histoire des masques Gabonais</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
               <Image
-                src="/fang.jpg"
+                src="/pu.jpg"
                 alt="Objets Parlants"
                 width={600}
                 height={400}
@@ -141,20 +108,26 @@ export default function Home() {
               />
               <div className="absolute bottom-0 bg-white p-4">
                 <h3 className="font-bold text-lg">
-                  Histoire0 – Construire Des Archives Numériques...
+                  Histoire du Masque disponible pour vous !
                 </h3>
                 <p>
-                Le masque fang est un masque en bois exotique blanchi au kaolin issu de l'art traditionnel du Gabon. Créé à une date inconnue par un ou des sculpteurs fangs anonymes, il est acheté en France par le peintre Maurice de Vlaminck en 1904.
+                  Le masque fang est un masque en bois exotique blanchi au kaolin issu de l'art traditionnel du Gabon.
                 </p>
                 <button className="mt-2 bg-black text-white px-4 py-2 rounded">
                   Voir plus
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             <div className="space-y-6">
               {projects.map((project, index) => (
-                <div key={index} className="flex space-x-4 items-center">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  className="flex space-x-4 items-center bg-white p-4 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                >
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -164,10 +137,10 @@ export default function Home() {
                   />
                   <div>
                     <p className="text-gray-500">{project.date}</p>
-                    <h3 className="font-bold">{project.title}</h3>
-                    <p>{project.description}</p>
+                    <h3 className="font-bold text-lg">{project.title}</h3>
+                    <p className="text-gray-700">{project.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -180,7 +153,6 @@ export default function Home() {
       <HighlightSection />
       <ArticlesSection />
       <EventsSection />
-      <NewsletterSection />
 
       {/* Footer */}
       <Footer />
