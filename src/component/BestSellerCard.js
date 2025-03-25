@@ -8,9 +8,8 @@ const products = [
     id: 1,
     name: "Couple floral DOUTSONA",
     images: ["/sc1.png", "/sc1.png", "/sc1.png"],
-    price: 1750.000,
-    oldPrice: 200.000,
-    discount: 20,
+    price: 1750000,
+    oldPrice: 200000,
     reviews: 120,
     whatsappLink: "https://wa.me/+24162635316",
   },
@@ -18,9 +17,8 @@ const products = [
     id: 2,
     name: "Gamme de produits",
     images: ["/g1.png", "/g2.png", "/gin1.png"],
-    price: 18.500,
-    oldPrice: 20.000,
-    discount: 1500,
+    price: 18500,
+    oldPrice: 20000,
     reviews: 85,
     whatsappLink: "https://wa.me/+24162635316",
   },
@@ -28,9 +26,8 @@ const products = [
     id: 3,
     name: "Infusion",
     images: ["/inf1.png", "/inf2.png", "/inf3.png"],
-    price: 10.000,
-    oldPrice: 109.99,
-    discount: 18,
+    price: 10000,
+    oldPrice: 10999,
     reviews: 60,
     whatsappLink: "https://wa.me/+24162635316",
   },
@@ -40,11 +37,7 @@ const ProductCard = ({ product, isFeatured }) => {
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
 
   return (
-    <div
-      className={`bg-white shadow-lg rounded-xl p-4 flex flex-col items-center mt-20 {
-        isFeatured ? "w-full max-w-md" : "w-full max-w-xs"
-      FCFA}`}
-    >
+    <div className={`bg-white shadow-lg rounded-xl p-4 flex flex-col items-center mt-20 ${isFeatured ? "w-full max-w-md" : "w-full max-w-xs"}`}>
       {/* Image principale */}
       <div className="relative w-40 h-40">
         <Image
@@ -65,9 +58,7 @@ const ProductCard = ({ product, isFeatured }) => {
               alt={`Miniature ${index + 1}`}
               width={40}
               height={40}
-              className={`rounded-md object-cover border ${
-                selectedImage === img ? "border-blue-500" : "border-gray-300"
-              }`}
+              className={`rounded-md object-cover border ${selectedImage === img ? "border-blue-500" : "border-gray-300"}`}
             />
           </button>
         ))}
@@ -87,14 +78,8 @@ const ProductCard = ({ product, isFeatured }) => {
           <span className="text-gray-500 text-sm ml-2">({product.reviews})</span>
         </div>
 
-        {/* Prix et réduction */}
-        <div className="mt-2 flex items-center justify-center gap-2">
-          <span className="text-gray-400 line-through text-sm">${product.oldPrice}</span>
-          <span className="bg-blue-100 text-blue-600 px-2 rounded text-xs">
-            -{product.discount}%
-          </span>
-        </div>
-        <p className="text-xl font-bold mt-1">${product.price}</p>
+        {/* Prix */}
+        <p className="text-xl font-bold mt-1">{product.price} Fcfa</p>
       </div>
 
       {/* Actions */}
