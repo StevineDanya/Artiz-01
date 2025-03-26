@@ -46,7 +46,7 @@ export default function Header() {
       <nav className="flex justify-center space-x-8 py-3 pr-15 text-lg font-semibold text-gray-900">
         <a href="/" className="hover:underline">Accueil</a>
         <a href="/categorie" className="hover:underline">Catégories</a>
-        <a href="/muse" className="hover:underline">Musé</a>
+        <a href="/muse" className="hover:underline">Musée</a>
       </nav>
     </header>
   );
