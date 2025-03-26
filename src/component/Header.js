@@ -1,3 +1,5 @@
+
+
 import { FaSearch, FaHeart, FaUser } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 
