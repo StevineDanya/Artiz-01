@@ -40,11 +40,8 @@ const ProductCard = ({ product, isFeatured }) => {
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
 
   return (
-    <div
-      className={`bg-white shadow-lg rounded-xl p-4 flex flex-col items-center mt-20 {
-        isFeatured ? "w-full max-w-md" : "w-full max-w-xs"
-      FCFA}`}
-    >
+    <div className={`bg-white shadow-lg rounded-xl p-4 flex flex-col items-center mt-20 ${isFeatured ? "w-full max-w-md" : "w-full max-w-xs"}`}>
+
       {/* Image principale */}
       <div className="relative w-40 h-40">
         <Image
